@@ -2,3 +2,8 @@
 .env
 __pycache__/
 *.pyc
+src/models
+src/models_1
+src/logs_tensorboard
+src/mahjong_tensorboard_logs
+mahjong_replay.json
