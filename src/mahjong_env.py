@@ -337,6 +337,8 @@ class MahjongEnv(gym.Env):
         self.discard_pile: np.ndarray = np.zeros(34, dtype=np.int32)
         self._prev_shanten: int = 8  # worst-case starting value
 
+        self._min_shanten_achieved: int = 8  # Track min shanten
+
     # ------------------------------------------------------------------
     # Seeding
     # ------------------------------------------------------------------
@@ -404,6 +406,7 @@ class MahjongEnv(gym.Env):
         self.agent_hand[tile] += 1
 
         self._prev_shanten = calculate_shanten(self.agent_hand)
+        self._min_shanten_achieved = self._prev_shanten
         initial_shanten = self._prev_shanten
         info = {
             "action_mask": self._action_mask(),
@@ -431,39 +434,63 @@ class MahjongEnv(gym.Env):
         self.agent_hand[action] -= 1
         self.discard_pile[action] += 1
 
-        # ---- 2. Dummy simulation (draw & immediately discard) ----
+        # ---- 2. Dummy simulation ----
+        dummy_discards = []
         for _ in range(3):
             if self.wall.sum() == 0:
                 break
             dummy_tile = self._draw_tile()
-            self.discard_pile[dummy_tile] += 1   # dummy discards at once
+            self.discard_pile[dummy_tile] += 1
+            dummy_discards.append(dummy_tile)
 
         # ---- 3. Agent draws ----
+        drawn_tile = -1
         if self.wall.sum() > 0:
-            drawn = self._draw_tile()
-            self.agent_hand[drawn] += 1
+            drawn_tile = self._draw_tile()
+            self.agent_hand[drawn_tile] += 1
         else:
-            # Wall exhausted after dummy draws → truncate
             truncated = True
 
-        # ---- 4. Termination check + shanten-aware reward ----
+        # ---- 4. Termination check + Adaptive Penalty ----
         current_shanten = self._shanten()
         if not truncated:
-            if current_shanten == -1:          # winning hand
+            if current_shanten == -1:          # AI Tới bài!
                 terminated = True
                 reward = +10.0
             else:
-                # Reward shaping: khuyến khích giảm shanten
-                # +0.5 mỗi lần shanten giảm 1 bước, −0.1 base per step
-                reward = -0.1 + max(0, self._prev_shanten - current_shanten) * 0.5
-        self._prev_shanten = current_shanten
+                # 1. Bảng hình phạt thích ứng theo Shanten
+                penalty_map = {
+                    6: -0.20,
+                    5: -0.15,
+                    4: -0.10,
+                    3: -0.05,
+                    2: -0.02,
+                    1: -0.01,
+                    0:  0.00  # Đạt Tenpai thì không bị phạt thời gian nữa
+                }
+                
+                # Lấy mức phạt tương ứng, nếu Shanten > 6 thì mặc định phạt -0.2
+                step_penalty = penalty_map.get(current_shanten, -0.20)
+                reward = step_penalty
+                
+                # 2. Thưởng khi phá kỷ lục (High-Water Mark - Giữ nguyên của bạn)
+                if current_shanten < self._min_shanten_achieved:
+                    improvement = self._min_shanten_achieved - current_shanten
+                    reward += improvement * 0.5
+                    self._min_shanten_achieved = current_shanten
 
+        self._prev_shanten = current_shanten
+        
         # ---- 5. Build info ----
         info: dict = {
             "action_mask":    self._action_mask(),
             "wall_remaining": int(self.wall.sum()),
             "shanten":        current_shanten,
             "shanten_detail": shanten_breakdown(self.agent_hand),
+            
+            # THÊM 2 DÒNG NÀY ĐỂ TRACK REPLAY
+            "dummy_discards": dummy_discards,
+            "agent_drawn":    drawn_tile
         }
 
         return self._get_obs(), reward, terminated, truncated, info

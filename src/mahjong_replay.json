@@ -1,0 +1,448 @@
+{
+    "metadata": {
+        "model_used": "models/checkpoints_1/mahjong_model_1000000_steps.zip",
+        "player": "AI_Agent",
+        "date_exported": "2026-04-22"
+    },
+    "initial_hand": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        2,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+    ],
+    "timeline": [
+        {
+            "turn": 1,
+            "agent_discarded": 0,
+            "dummies_discarded": [
+                27,
+                20,
+                15
+            ],
+            "agent_drew": 32,
+            "shanten_after": 3,
+            "shanten_status": "building",
+            "reward_this_step": -0.05
+        },
+        {
+            "turn": 2,
+            "agent_discarded": 30,
+            "dummies_discarded": [
+                5,
+                0,
+                26
+            ],
+            "agent_drew": 10,
+            "shanten_after": 2,
+            "shanten_status": "building",
+            "reward_this_step": 0.48
+        },
+        {
+            "turn": 3,
+            "agent_discarded": 26,
+            "dummies_discarded": [
+                23,
+                31,
+                2
+            ],
+            "agent_drew": 12,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": 0.49
+        },
+        {
+            "turn": 4,
+            "agent_discarded": 32,
+            "dummies_discarded": [
+                9,
+                27,
+                23
+            ],
+            "agent_drew": 12,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 5,
+            "agent_discarded": 19,
+            "dummies_discarded": [
+                1,
+                15,
+                15
+            ],
+            "agent_drew": 4,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 6,
+            "agent_discarded": 14,
+            "dummies_discarded": [
+                8,
+                22,
+                21
+            ],
+            "agent_drew": 14,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 7,
+            "agent_discarded": 14,
+            "dummies_discarded": [
+                6,
+                25,
+                18
+            ],
+            "agent_drew": 5,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 8,
+            "agent_discarded": 13,
+            "dummies_discarded": [
+                16,
+                31,
+                7
+            ],
+            "agent_drew": 12,
+            "shanten_after": 0,
+            "shanten_status": "tenpai",
+            "reward_this_step": 0.5
+        },
+        {
+            "turn": 9,
+            "agent_discarded": 10,
+            "dummies_discarded": [
+                33,
+                2,
+                17
+            ],
+            "agent_drew": 10,
+            "shanten_after": 0,
+            "shanten_status": "tenpai",
+            "reward_this_step": 0.0
+        },
+        {
+            "turn": 10,
+            "agent_discarded": 10,
+            "dummies_discarded": [
+                13,
+                3,
+                26
+            ],
+            "agent_drew": 28,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 11,
+            "agent_discarded": 28,
+            "dummies_discarded": [
+                12,
+                22,
+                17
+            ],
+            "agent_drew": 25,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 12,
+            "agent_discarded": 12,
+            "dummies_discarded": [
+                19,
+                18,
+                8
+            ],
+            "agent_drew": 15,
+            "shanten_after": 2,
+            "shanten_status": "building",
+            "reward_this_step": -0.02
+        },
+        {
+            "turn": 13,
+            "agent_discarded": 15,
+            "dummies_discarded": [
+                22,
+                23,
+                28
+            ],
+            "agent_drew": 16,
+            "shanten_after": 2,
+            "shanten_status": "building",
+            "reward_this_step": -0.02
+        },
+        {
+            "turn": 14,
+            "agent_discarded": 16,
+            "dummies_discarded": [
+                3,
+                20,
+                5
+            ],
+            "agent_drew": 4,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 15,
+            "agent_discarded": 10,
+            "dummies_discarded": [
+                21,
+                11,
+                16
+            ],
+            "agent_drew": 19,
+            "shanten_after": 2,
+            "shanten_status": "building",
+            "reward_this_step": -0.02
+        },
+        {
+            "turn": 16,
+            "agent_discarded": 19,
+            "dummies_discarded": [
+                32,
+                6,
+                6
+            ],
+            "agent_drew": 1,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 17,
+            "agent_discarded": 10,
+            "dummies_discarded": [
+                29,
+                4,
+                18
+            ],
+            "agent_drew": 9,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 18,
+            "agent_discarded": 9,
+            "dummies_discarded": [
+                32,
+                21,
+                29
+            ],
+            "agent_drew": 27,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 19,
+            "agent_discarded": 27,
+            "dummies_discarded": [
+                33,
+                30,
+                3
+            ],
+            "agent_drew": 17,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 20,
+            "agent_discarded": 17,
+            "dummies_discarded": [
+                33,
+                11,
+                9
+            ],
+            "agent_drew": 25,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 21,
+            "agent_discarded": 1,
+            "dummies_discarded": [
+                7,
+                20,
+                21
+            ],
+            "agent_drew": 3,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 22,
+            "agent_discarded": 12,
+            "dummies_discarded": [
+                24,
+                26,
+                33
+            ],
+            "agent_drew": 31,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 23,
+            "agent_discarded": 31,
+            "dummies_discarded": [
+                24,
+                5,
+                13
+            ],
+            "agent_drew": 28,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 24,
+            "agent_discarded": 28,
+            "dummies_discarded": [
+                24,
+                30,
+                19
+            ],
+            "agent_drew": 18,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 25,
+            "agent_discarded": 18,
+            "dummies_discarded": [
+                14,
+                29,
+                23
+            ],
+            "agent_drew": 13,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 26,
+            "agent_discarded": 13,
+            "dummies_discarded": [
+                24,
+                31,
+                0
+            ],
+            "agent_drew": 11,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 27,
+            "agent_discarded": 11,
+            "dummies_discarded": [
+                27,
+                17,
+                11
+            ],
+            "agent_drew": 29,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.01
+        },
+        {
+            "turn": 28,
+            "agent_discarded": 29,
+            "dummies_discarded": [
+                30,
+                16,
+                7
+            ],
+            "agent_drew": 1,
+            "shanten_after": 0,
+            "shanten_status": "tenpai",
+            "reward_this_step": 0.0
+        },
+        {
+            "turn": 29,
+            "agent_discarded": 12,
+            "dummies_discarded": [
+                9,
+                28,
+                32
+            ],
+            "agent_drew": 22,
+            "shanten_after": 0,
+            "shanten_status": "tenpai",
+            "reward_this_step": 0.0
+        },
+        {
+            "turn": 30,
+            "agent_discarded": 1,
+            "dummies_discarded": [
+                1,
+                20,
+                2
+            ],
+            "agent_drew": 25,
+            "shanten_after": 0,
+            "shanten_status": "tenpai",
+            "reward_this_step": 0.0
+        },
+        {
+            "turn": 31,
+            "agent_discarded": 25,
+            "dummies_discarded": [
+                14,
+                0
+            ],
+            "agent_drew": -1,
+            "shanten_after": 1,
+            "shanten_status": "building",
+            "reward_this_step": -0.1
+        }
+    ],
+    "result": "Draw"
+}
